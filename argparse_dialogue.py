@@ -1,13 +1,19 @@
 from __future__ import annotations
 
+import os
+
 from dataclasses import dataclass
 from enum import StrEnum, IntEnum
 import textwrap
 import logging
 
 logger = logging.getLogger(__name__)
+
+if not os.path.exists("logs"):
+    os.mkdir("logs")
+    
 logging.basicConfig(
-    filename="dialogue.log",
+    filename="logs/dialogue.log",
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
 )
@@ -18,6 +24,7 @@ logging.basicConfig(
 
 @dataclass
 class User:
+    """User Fields."""
     age: int
     name: str
     gender: str
