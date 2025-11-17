@@ -1,0 +1,12 @@
+services:
+  server:
+    build:
+      context: .
+    develop:
+      watch:
+        - action: rebuild
+          path: .
+    stdin_open: true
+    tty: true
+volumes:
+  db-data:
