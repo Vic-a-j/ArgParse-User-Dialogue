@@ -6,5 +6,7 @@ services:
       watch:
         - action: rebuild
           path: .
+    stdin_open: true
+    tty: true
 volumes:
   db-data:
